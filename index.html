@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mental Fitness Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div class="theme-toggle" onclick="toggleTheme()">
+      <span id="theme-icon"> change the theme 🌙</span>
+    </div>
+
+    <nav>
+    <div class="container">
+      <header class="header">
+        <h1>🧠 Mental Fitness Tracker</h1>
+        <p>Track your mental well-being, one day at a time</p>
+      </header>
+
+      <!-- Mood Tracking Section -->
+      <div class="card mood-section">
+        <h2>📊 How are you feeling today?</h2>
+        <div class="mood-display" id="moodDisplay">😐</div>
+        <input
+          type="range"
+          min="1"
+          max="5"
+          value="3"
+          class="mood-slider"
+          id="moodSlider"
+        />
+        <div class="mood-labels">
+          <span>😢 Terrible</span>
+          <span>😕 Bad</span>
+          <span>😐 Okay</span>
+          <span>😊 Good</span>
+          <span>😄 Amazing</span>
+        </div>
+        <button class="btn" onclick="saveMood()" style="margin-top: 20px">
+          Save Mood
+        </button>
+        <div
+          id="moodFeedback"
+          style="
+            margin-top: 15px;
+            color: var(--success-color);
+            font-weight: 600;
+          "
+        ></div>
+      </div>
+
+      <!-- Gratitude Journal Section -->
+      <div class="card gratitude-section">
+        <h2>🙏 Gratitude Journal</h2>
+        <textarea
+          id="gratitudeText"
+          placeholder="What are you grateful for today? Write down three things that made you smile..."
+        ></textarea>
+        <button class="btn" onclick="saveGratitude()" style="margin-top: 15px">
+          Save Gratitude Entry
+        </button>
+        <div class="gratitude-history" id="gratitudeHistory">
+          <h3 style="margin-bottom: 15px; color: var(--primary-color)">
+            📚 Your Recent Entries
+          </h3>
+          <div id="gratitudeEntries"></div>
+        </div>
+      </div>
+
+      <!-- Motivational Quote Section -->
+      <div class="card quote-section">
+        <h2>✨ Daily Inspiration</h2>
+        <div class="quote-text" id="quoteText">
+          Loading your daily inspiration...
+        </div>
+        <div class="quote-author" id="quoteAuthor"></div>
+        <button class="btn btn-secondary" onclick="getNewQuote()">
+          <span id="quoteButtonText">Get New Quote</span>
+        </button>
+      </div>
+
+      <!-- Statistics Section -->
+      <div class="card">
+        <h2>📈 Your Progress</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" id="totalEntries">0</div>
+            <div class="stat-label">Gratitude Entries</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="averageMood">0</div>
+            <div class="stat-label">Average Mood</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="streakDays">0</div>
+            <div class="stat-label">Day Streak</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feedback Modal -->
+    <div class="feedback" id="feedbackModal">
+      <span id="feedbackText">✅ Saved successfully!</span>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
