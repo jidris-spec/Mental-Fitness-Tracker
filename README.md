@@ -38,13 +38,7 @@ Responsive Design & Basic Animations
 
 (https://github.com/user-attachments/assets/06b9d918-f7cb-40c6-957d-8847d45cbe7b)
 /assets/441aa103-5c94-485b-9bf5-5f7cc5ae8949)
-🚀 How to Use
-Clone this repo:
-git clone https://github.com/your-username/mental-fitness-tracker.git
 
-Open index.html in your browser
-
-No installation required — everything runs client-side
 
 🧪 What I Learned
 How to manage user data with localStorage
