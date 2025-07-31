@@ -34,7 +34,7 @@ Responsive Design & Basic Animations
 📸 Screenshots
 
 
-(https://github.com/user-attachments![Screenshot 2025-08-01 000746](https://github.com/user-attachments/assets/06b9d918-f7cb-40c6-957d-8847d45cbe7b)
+(https://github.com/user-attachments/assets/06b9d918-f7cb-40c6-957d-8847d45cbe7b)
 /assets/441aa103-5c94-485b-9bf5-5f7cc5ae8949)
 
 (https://github.com/user-attachments/assets/bef731d9-8d38-4adc-a233-851220ed5c3c)
