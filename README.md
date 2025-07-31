@@ -1,5 +1,5 @@
 🧠 Mental Fitness Tracker
-A simple yet powerful web application that helps users track their emotional well-being, express daily gratitude, and stay inspired — all in one interface.
+A simple yet powerful web application that helps users track their emotional well-being, express daily gratitude, and stay inspired all in one interface.
 
 This project was built to reinforce my understanding of localStorage, cookies, session handling, and frontend design while learning FastAPI and modern JavaScript development practices.
 
