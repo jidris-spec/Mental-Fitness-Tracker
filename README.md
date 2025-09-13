@@ -64,5 +64,5 @@ Created by Akinsanya Idris
 🔗 GitHub: https://github.com/jidris-spec
 🔗 LinkedIn: https://www.linkedin.com/in/idris-akinsanya-b221b7242/
 Netlify
-https://688be424cd2b856eb4984ac6--celadon-caramel-982f91.netlify.app/
+https://timely-lebkuchen-2eab9b.netlify.app/
 
