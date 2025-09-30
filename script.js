@@ -119,20 +119,44 @@ function loadGratitudeHistory() {
 function getNewQuote() {
   const quoteText = document.getElementById("quoteText");
   const quoteAuthor = document.getElementById("quoteAuthor");
-  const quoteButton = document.getElementById("quoteButtonText");
+  const quoteButtonText = document.getElementById("quoteButtonText");
+  quoteButtonText.textContent = "Loading...";
 
-  quoteButton.textContent = "Loading...";
-  fetch("https://api.quotable.io/random")
-    .then((response) => response.json())
-    .then((data) => {
-      quoteText.textContent = `"${data.content}"`;
-      quoteAuthor.textContent = `- ${data.author}`;
-      quoteButton.textContent = "Get New Quote";
+  // Check for network connectivity
+  if (!navigator.onLine) {
+    quoteText.textContent = "No internet connection. Please check your network.";
+    quoteAuthor.textContent = "";
+    quoteButtonText.textContent = "Get New Quote";
+    return;
+  }
+
+  // Use zenquotes.io as an alternative quote API
+  fetch("https://zenquotes.io/api/random")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Network response was not ok (status: ${response.status})`);
+      }
+      return response.json();
     })
-    .catch(() => {
-      quoteText.textContent = "Could not load quote. Try again.";
+    .then((data) => {
+      // zenquotes.io returns an array with one quote object
+      if (!Array.isArray(data) || !data[0] || !data[0].q || !data[0].a) {
+        throw new Error("Invalid data format from API");
+      }
+      quoteText.textContent = `"${data[0].q}"`;
+      quoteAuthor.textContent = `— ${data[0].a}`;
+      quoteButtonText.textContent = "Get New Quote";
+    })
+    .catch((error) => {
+      let message = "Failed to load quote. Please try again later.";
+      if (error instanceof TypeError) {
+        message = "Unable to fetch quote due to a network or certificate error. Please try again later or use a different quote API.";
+      }
+      quoteText.textContent = message;
       quoteAuthor.textContent = "";
-      quoteButton.textContent = "Try Again";
+      quoteButtonText.textContent = "Get New Quote";
+      showFeedback("Quote API error: " + error.message, "warning");
+      console.error("Error fetching quote:", error);
     });
 }
 
